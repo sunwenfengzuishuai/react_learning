@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+<div id="wrap"></div>
+<script type="text/babel">
+   class Like extends React.Component{
+       constructor (props){
+          super(props)
+          this.state = {
+              isLike:false
+          }
+
+           this.handler = this.handler.bind(this)
+       }
+
+       handler(){
+           const isLike = !this.state.isLike
+           this.setState({
+               isLike
+           })
+       }
+
+       render(){
+           const {isLike} = this.state
+           return <h1 onClick={this.handler} >{isLike?"爱":"不爱"}</h1>
+       }
+   }
+
+    ReactDOM.render(<Like/>,document.getElementById("wrap"))
+</script>
+</body>
+</html>

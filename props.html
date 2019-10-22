@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.7.2/prop-types.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+<div id="wrap"></div>
+<script type="text/babel">
+    class List extends React.Component{
+        constructor (props){
+            super(props)
+        }
+
+
+        render(){
+            return <ul>
+                <li>姓名：{this.props.name}</li>
+                <li>年龄：{this.props.age}</li>
+                <li>职业：{this.props.job}</li>
+            </ul>
+        }
+    }
+
+    ReactDOM.render(<List name="小李" age={800} job="搬砖"/>,document.getElementById("wrap"))
+</script>
+</body>
+</html>

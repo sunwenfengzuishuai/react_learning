@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+<div id="wrap"></div>
+<script type="text/babel">
+    function List(props){
+        return <ul>
+            <li>姓名：{props.name}</li>
+            <li>年龄：{props.age}</li>
+            <li>职业：{props.job}</li>
+        </ul>
+    }
+
+    List.propTypes = {
+        name: PropTypes.string.isRequired,
+    }
+
+    const obj ={
+        name:'张三',
+        age:123,
+        job:"打工"
+    }
+
+    ReactDOM.render(<List {...obj}/>,document.getElementById("wrap"))
+</script>
+</body>
+</html>
